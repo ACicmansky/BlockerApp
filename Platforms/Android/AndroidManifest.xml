@@ -4,4 +4,22 @@
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.BIND_VPN_SERVICE" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+	<service android:name=".AppBlockerService"
+			android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+		<intent-filter>
+			<action android:name="android.accessibilityservice.AccessibilityService" />
+		</intent-filter>
+	</service>
+
+	<receiver android:enabled="true" android:exported="true" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver">
+		<intent-filter>
+			<action android:name="android.intent.action.BOOT_COMPLETED" />
+		</intent-filter>
+	</receiver>
+
+
 </manifest>

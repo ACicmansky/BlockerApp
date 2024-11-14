@@ -19,6 +19,8 @@ namespace BlockerApp
     		builder.Logging.AddDebug();
 #endif
 
+            builder.Services.AddSingleton<IBlockScheduler, BlockScheduler>();
+
             return builder.Build();
         }
     }
