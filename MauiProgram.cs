@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using BlockerApp.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace BlockerApp
 {
@@ -19,7 +20,7 @@ namespace BlockerApp
     		builder.Logging.AddDebug();
 #endif
 
-            builder.Services.AddSingleton<IBlockScheduler, BlockScheduler>();
+            // builder.Services.AddSingleton<IBlockScheduler, BlockScheduler>();
 
             return builder.Build();
         }

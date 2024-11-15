@@ -6,10 +6,10 @@
         {
             InitializeComponent();
 
-            #if ANDROID
-            var intent = new Intent(Android.App.Application.Context, typeof(NetworkBlockerService));
-            Android.App.Application.Context.StartService(intent);
-            #endif
+            // #if ANDROID
+            // var intent = new Intent(Android.App.Application.Context, typeof(NetworkBlockerService));
+            // Android.App.Application.Context.StartService(intent);
+            // #endif
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
